@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Mati Awards — Indie Animation Celebration</title>
+  <meta name="description" content="The Mati Awards — a community-driven celebration of independent animation. Join us: nominate, volunteer, or shape the show." />
+  <!-- Replace with your favicon file when available -->
+  <link rel="icon" href="favicon.ico" />
+
+  <!-- Basic styles (single file for ease) -->
+  <style>
+    :root{
+      --bg:#0f0f12;
+      --card:#0f1720;
+      --muted:#9aa5b1;
+      --accent:#ff7b8a;
+      --accent-2:#7be3ff;
+      --glass: rgba(255,255,255,0.03);
+      --radius:12px;
+      --maxw:1100px;
+      --gap:16px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: #e6eef6;
+      line-height:1.45;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,#071018 0%, #071022 60%);
+      padding:24px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .site{
+      width:100%;
+      max-width:var(--maxw);
+      margin:0 auto;
+    }
+
+    header{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      margin-bottom:22px;
+    }
+    .logo{
+      width:72px;
+      height:72px;
+      border-radius:14px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:22px;
+      color:#071018;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+      flex-shrink:0;
+    }
+    .brand h1{
+      margin:0;
+      font-size:20px;
+      letter-spacing:0.2px;
+    }
+    .brand p{
+      margin:2px 0 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    nav{
+      margin-left:auto;
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .btn, .cta{
+      background:transparent;
+      color:var(--accent-2);
+      border:1px solid rgba(123,227,255,0.12);
+      padding:8px 12px;
+      border-radius:10px;
+      font-size:13px;
+      text-decoration:none;
+    }
+    .cta{
+      background: linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:#071018;
+      border: none;
+      font-weight:600;
+    }
+
+    main{
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:24px;
+      align-items:start;
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow: 0 8px 30px rgba(2,6,12,0.6);
+      overflow:hidden;
+    }
+
+    .hero{
+      padding:28px;
+      border-radius:12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .hero h2{margin:0;font-size:26px}
+    .hero p{margin:0;color:var(--muted)}
+
+    .kpis{
+      display:flex;
+      gap:12px;
+      margin-top:14px;
+      flex-wrap:wrap;
+    }
+    .k{
+      background:var(--glass);
+      padding:10px 12px;
+      border-radius:10px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    section.half{
+      margin-top:18px;
+    }
+    h3{margin:6px 0 8px 0;font-size:16px}
+    p.lead{color:var(--muted);margin:0 0 10px 0;font-size:14px}
+
+    /* categories list */
+    .chips{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{
+      background: rgba(255,255,255,0.03);
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:13px;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+
+    /* right column (form embed + community) */
+    .right{
+      position:sticky;
+      top:24px;
+      align-self:start;
+    }
+    .embed{
+      min-height:420px;
+      border-radius:10px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    footer{
+      margin-top:22px;
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      gap:16px;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    /* responsive */
+    @media (max-width:980px){
+      main{grid-template-columns:1fr; padding-bottom: 40px}
+      .right{position:relative;top:auto}
+    }
+
+    /* small utilities */
+    .muted{color:var(--muted)}
+    a.link{color:var(--accent-2); text-decoration:none}
+    .big-btn{display:inline-block;padding:12px 16px;border-radius:12px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#071018;font-weight:700;text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="site" role="main">
+    <header aria-label="site header">
+      <div class="logo" aria-hidden="true">Mati</div>
+      <div class="brand">
+        <h1>The Mati Awards</h1>
+        <p>Celebrating independent animation — made by creators, for the community.</p>
+      </div>
+
+      <nav aria-label="main navigation">
+        <a class="btn" href="#about">About</a>
+        <a class="btn" href="#categories">Categories</a>
+        <a class="btn" href="#nominate">Nominate</a>
+        <a class="cta" href="#form">Give Feedback</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Left: content -->
+      <div>
+        <article class="card hero" aria-labelledby="hero-title">
+          <h2 id="hero-title">Help shape the Mati Awards</h2>
+          <p class="lead">We’re building a community-driven indie animation award show. Your feedback, ideas, and energy will help decide categories, nominations, and how winners are chosen.</p>
+
+          <div class="kpis" aria-hidden="true">
+            <div class="k">Community-first</div>
+            <div class="k">Volunteer-friendly</div>
+            <div class="k">Showcases & panels</div>
+          </div>
+
+          <div style="margin-top:12px">
+            <a href="#form" class="big-btn">Take the community survey</a>
+            <a href="#join" class="btn" style="margin-left:8px">Join the team</a>
+          </div>
+        </article>
+
+        <!-- About -->
+        <section id="about" class="card half" aria-labelledby="about-heading">
+          <h3 id="about-heading">About the Mati Awards</h3>
+          <p class="lead">Named after the heart of "aniMATIon", the Mati Awards celebrate creativity, experimentation, and craft in independent animation. We prioritize accessibility, support for small creators, and a community-driven nomination process.</p>
+        </section>
+
+        <!-- Categories -->
+        <section id="categories" class="card half" aria-labelledby="categories-heading">
+          <h3 id="categories-heading">Top categories (community-suggested)</h3>
+          <p class="muted">A sample of categories that the community is voting on.</p>
+
+          <div class="chips" style="margin-top:12px">
+            <span class="chip">Best New Pilot</span>
+            <span class="chip">Best Standalone Short</span>
+            <span class="chip">Best Script / Writing</span>
+            <span class="chip">Best Direction</span>
+            <span class="chip">Best Voice Actor/Actress</span>
+            <span class="chip">Best Sound Design</span>
+            <span class="chip">Best Score</span>
+            <span class="chip">Best Visual Design</span>
+            <span class="chip">Best Animator</span>
+            <span class="chip">Best 2D Animation</span>
+            <span class="chip">Best 3D Animation</span>
+            <span class="chip">Best Stop-Motion</span>
+            <span class="chip">Most Experimental Indie Show</span>
+            <span class="chip">Best Non-Human Speaking Role</span>
+            <span class="chip">Fan Favorite</span>
+          </div>
+        </section>
+
+        <!-- Show Experience -->
+        <section class="card half" id="show" aria-labelledby="show-heading">
+          <h3 id="show-heading">What should the show include?</h3>
+          <p class="lead">Screenings, behind-the-scenes talks, live music, community panels, and in-depth spotlights are all on the table. We want it to feel creative, community-driven, and inclusive.</p>
+        </section>
+
+        <!-- Join / Volunteer -->
+        <section id="join" class="card half" aria-labelledby="join-heading">
+          <h3 id="join-heading">Join the Team</h3>
+          <p class="lead">We’re recruiting students, creators, and volunteers. Whether you can help on design, production, or promotion — email us or join the Discord to get involved.</p>
+          <p style="margin-top:8px"><strong>Email:</strong> <a class="link" href="mailto:yourname@example.com">yourname@example.com</a></p>
+          <p style="margin-top:6px"><strong>Discord:</strong> <a class="link" href="DISCORD_URL" id="discord-link">Join our server</a></p>
+        </section>
+
+        <footer>
+          <div>© <span id="year"></span> The Mati Awards</div>
+          <div class="muted">Built with ❤️ by a DMD student — join us!</div>
+        </footer>
+      </div>
+
+      <!-- Right: embed form / community -->
+      <aside class="right">
+        <div class="card">
+          <h3 id="form-heading">Community Input Form</h3>
+          <p class="muted">Your responses shape categories, judging, and community activities. Thanks for taking a few minutes!</p>
+
+          <!-- Replace FORM_URL with your Google Form share URL (use the /viewform?embedded=true link if available) -->
+          <div id="form" class="embed" role="region" aria-labelledby="form-heading">
+            <iframe
+              src="FORM_URL"
+              width="100%"
+              height="520"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              title="Mati Awards Community Input Form"
+              aria-label="Mati Awards community form">
+              Loading…
+            </iframe>
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:8px;justify-content:space-between;align-items:center">
+            <a class="btn" href="FORM_URL" target="_blank" rel="noopener">Open form</a>
+            <a class="cta" href="#join">Volunteer</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h3>Stay Connected</h3>
+          <p class="muted">Follow or share: help us reach more creators.</p>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <a class="btn" href="https://twitter.com/" target="_blank" rel="noopener">Twitter/X</a>
+            <a class="btn" href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn" href="https://youtube.com/" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script>
+    // small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Accessibility: if visitor came from a screen reader, focus the form
+    // (Optional: uncomment if you want auto-focus)
+    // document.getElementById('form').querySelector('iframe').focus();
+  </script>
+</body>
+</html>
