@@ -324,3 +324,33 @@
   </script>
 </body>
 </html>
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mati Awards</title>
+</head>
+<body>
+  <section id="weekly-prompt">
+    <h2 id="weekTitle"></h2>
+    <p id="theme"></p>
+    <p id="description"></p>
+    <a id="submitLink" class="btn" target="_blank">Submit Your Work</a>
+  </section>
+
+  <script>
+    // Fetch data.json from your GitHub Pages link
+    fetch("https://yourusername.github.io/mati-awards/data.json")
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("weekTitle").textContent = data.currentWeek.weekTitle;
+        document.getElementById("theme").textContent = `Theme: ${data.currentWeek.theme}`;
+        document.getElementById("description").textContent = data.currentWeek.description;
+        document.getElementById("submitLink").href = data.currentWeek.submissionsLink;
+      })
+      .catch(error => console.error("Error loading JSON:", error));
+  </script>
+</body>
+</html>
