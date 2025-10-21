@@ -1,0 +1,25 @@
+{
+  "currentWeek": {
+    "weekNumber": 1,
+    "weekTitle": "The Beginning",
+    "theme": "Transformation",
+    "description": "Create something that captures the feeling of change or rebirth.",
+    "submissionsLink": "https://forms.gle/yourformlink",
+    "submissions": [
+      {
+        "creator": "Ava Lin",
+        "type": "Animation",
+        "title": "Metamorphosis",
+        "link": "https://youtu.be/example1",
+        "thumbnail": "https://i.imgur.com/example1.png"
+      },
+      {
+        "creator": "Riko Mars",
+        "type": "Music",
+        "title": "Molten Wings",
+        "link": "https://soundcloud.com/example2",
+        "thumbnail": "https://i.imgur.com/example2.png"
+      }
+    ]
+  }
+}
